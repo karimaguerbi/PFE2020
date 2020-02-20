@@ -3,12 +3,16 @@
 {% block title %}union manager system{% endblock %}
 
 {% block body %}
+ {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+ <h1>Hello{{app.user.username}} ✅</h1>
+  {% else %}
 
 <h1>Hello Abdel Karim! ✅</h1>
 <a href="{{path('app_login')}}"><img src="{{asset('pictures/UGTT.jpg')}}" alt="ugtt"/></a>
 
 
 <object data=" song/ugtt.wav " heigth="0" width="0" >
-</object> 
+</object>
+{% endif %} 
 
 {% endblock %}
